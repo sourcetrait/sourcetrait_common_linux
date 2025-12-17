@@ -12,7 +12,7 @@ pub(crate) mod crossplat {
     //pub(crate) mod error;
     //pub(crate) mod model;
 }
-pub(crate) mod fs {
+pub(crate) mod linux_fs {
     pub(crate) mod copy_preserved;
 }
 
@@ -27,6 +27,9 @@ pub use crate::{
             ui::*,
         },
     },
+    linux_fs::{
+        copy_preserved::copy_preserved,
+    }
 };
 
 pub(crate) use crate::{
@@ -35,15 +38,18 @@ pub(crate) use crate::{
     },
 };
 
+#[allow(unused_imports)]
 pub(crate) use std::{
     env,
-    ffi::CString,
+    ffi::{CStr, CString},
     io,
+    fs,
     os::unix::{
         ffi::OsStrExt,
         fs::MetadataExt,
     },
     path::{Path, PathBuf},
+    ptr,
     process::Command,
 };
 

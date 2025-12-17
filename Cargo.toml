@@ -5,6 +5,7 @@ members = [
 ]
 
 [workspace.dependencies]
+libc = "0.2"
 snafu = "0.8"
 sourcetrait_stdx = "1"
 strum = { version = "0.27", features = ["derive"] }
