@@ -12,6 +12,9 @@ pub(crate) mod crossplat {
     //pub(crate) mod error;
     //pub(crate) mod model;
 }
+pub(crate) mod fs {
+    pub(crate) mod copy_preserved;
+}
 
 pub use crate::{
     crossplat::{
@@ -34,6 +37,12 @@ pub(crate) use crate::{
 
 pub(crate) use std::{
     env,
+    ffi::CString,
+    io,
+    os::unix::{
+        ffi::OsStrExt,
+        fs::MetadataExt,
+    },
     path::{Path, PathBuf},
     process::Command,
 };
