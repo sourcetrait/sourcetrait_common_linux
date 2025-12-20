@@ -9,11 +9,6 @@ pub(crate) mod crossplat {
         pub(crate) mod ui;
     }
     pub(crate) mod consts;
-    //pub(crate) mod error;
-    //pub(crate) mod model;
-}
-pub(crate) mod linux_fs {
-    pub(crate) mod copy_preserved;
 }
 
 pub use crate::{
@@ -27,9 +22,6 @@ pub use crate::{
             ui::*,
         },
     },
-    linux_fs::{
-        copy_preserved::copy_preserved,
-    }
 };
 
 pub(crate) use crate::{
